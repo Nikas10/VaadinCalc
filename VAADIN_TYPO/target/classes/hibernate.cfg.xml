@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/ForumDB</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+
+        <!-- NOTE that after automapping with IDEA property username and password will delete -->
+        <!--and will be:  Initial SessionFactory failedorg.hibernate.service.spi.ServiceException: Unable to create requested service-->
+        <property name="connection.username">admin</property>
+        <property name="connection.password">1q2w3e</property>
+        <property name="hbm2ddl.auto">update</property>
+        <!-- NOTE that after automapping with IDEA property username and password will delete -->
+        <mapping class="com.Typography.entity.color"/>
+        <mapping class="com.Typography.entity.currency"/>
+        <mapping class="com.Typography.entity.mattertype"/>
+        <mapping class="com.Typography.entity.measure"/>
+        <mapping class="com.Typography.entity.printertype"/>
+        <mapping class="com.Typography.entity.densityprice"/>
+        <mapping class="com.Typography.entity.digitdevices"/>
+        <mapping class="com.Typography.entity.matter"/>
+        <!-- DB schema will be updated if needed -->
+    </session-factory>
+</hibernate-configuration>
